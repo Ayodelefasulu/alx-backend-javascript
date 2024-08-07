@@ -1,7 +1,6 @@
 function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
     let success = true;
-
     if (success) {
       resolve('Success: Data fetched from API');
     } else {
