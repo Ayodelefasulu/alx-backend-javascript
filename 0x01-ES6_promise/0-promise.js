@@ -1,6 +1,6 @@
 function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
-    const success = true;
+    let success = true;
 
     if (success) {
       resolve('Success: Data fetched from API');
