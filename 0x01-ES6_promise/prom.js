@@ -5,8 +5,9 @@ function bakeCake(){
     setTimeout(()=>{
       let success = true;
 
+      // Try with or without console.log()
       if (success) {
-        resolve(console.log("The cake is READY!"));
+        resolve("The cake is READY!");
       } else {
         reject(console.log("The cake is NOT READY!"));
       }
@@ -14,13 +15,14 @@ function bakeCake(){
   });
 }
 
+//const b = bakeCake();
+//console.log(b instanceof Promise);
 //var [message, error] = ["Good", "Bad"];
+
 bakeCake()
   .then((message="good")=>{
-    //const message = "good";
     console.log(message);
   })
   .catch((error="bad")=>{
-    //const error = "bad";
       console.log(error);
     });
