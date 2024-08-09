@@ -2,8 +2,8 @@
 
 export default class Currency {
   constructor(code, name) {
-    this.code = code;
-    this.name = name;
+    this._code = code;
+    this._name = name;
   }
 
   // Getter and Setter for _code
