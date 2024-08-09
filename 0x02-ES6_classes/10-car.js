@@ -1,4 +1,3 @@
-// Create a symbol to store the clone method
 const cloneSymbol = Symbol('clone');
 
 export default class Car {
@@ -8,9 +7,10 @@ export default class Car {
     this._color = color;
   }
 
-  // Method to clone the Car instance
+  // Private method to clone the Car instance
   [cloneSymbol]() {
-    return new Car(this._brand, this._motor, this._color);
+    // Ensure we create an instance of the same class as this instance
+    return new this.constructor(this._brand, this._motor, this._color);
   }
 
   // Public method to access the clone functionality
@@ -18,3 +18,4 @@ export default class Car {
     return this[cloneSymbol]();
   }
 }
+
