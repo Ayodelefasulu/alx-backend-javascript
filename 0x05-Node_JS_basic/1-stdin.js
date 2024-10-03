@@ -1,18 +1,21 @@
 // 1-stdin.js
 
-// Prompt the user with a message
+// Print the welcome message to the user
 console.log('Welcome to Holberton School, what is your name?');
 
-// Read from stdin (standard input)
-process.stdin.on('data', (data) => {
-  const input = data.toString().trim(); // Get the user input and trim any extra whitespace
-  console.log(`Your name is: ${input}`);
+// Read from stdin (standard input) using the 'process.stdin' stream
+process.stdin.setEncoding('utf8');
 
-  // End the process after displaying the name
-  process.exit();
+// Listen for user input
+process.stdin.on('data', (input) => {
+  const name = input.trim(); // Remove extra spaces or new lines
+  console.log(`Your name is: ${name}`);
+
+  // Close the stdin stream once input is received
+  process.stdin.end();
 });
 
-// Handle the process exit and display a closing message
-process.on('exit', () => {
+// When the stdin stream is closed, display the closing message
+process.stdin.on('end', () => {
   console.log('This important software is now closing');
 });
