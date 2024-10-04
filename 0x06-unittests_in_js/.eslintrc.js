@@ -3,6 +3,8 @@ module.exports = {
     browser: false,
     es6: true,
     jest: true,
+    "mocha": true, // Enable Mocha environment
+    "node": true // Enable Node environment
   },
   extends: [
     'airbnb-base',
@@ -22,6 +24,9 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-console': 'off',
     'no-shadow': 'off',
+    'jest/prefer-expect-assertions': 'off',
+    'jest/valid-expect': 'off',
+    'no-unused-expressions': 'off', // Disable unused expressions
     'no-restricted-syntax': [
       'error',
       'LabeledStatement',
