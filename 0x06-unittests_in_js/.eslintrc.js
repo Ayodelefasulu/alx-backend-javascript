@@ -9,6 +9,8 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:jest/all',
+    "eslint:recommended",
+    "plugin:chai-friendly/recommended"
   ],
   globals: {
     Atomics: 'readonly',
